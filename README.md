@@ -26,6 +26,7 @@
   <br/>
   <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=zneb21&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact" />
 </p>
+
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/neb0527) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/https://www.facebook.com/zneb.delariman/) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/nebnebz) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:znebdelariman@gmail.com) 
 
