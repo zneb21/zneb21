@@ -1,5 +1,6 @@
-# 💫 About Me:
-🎓 Currently studying Computer Science<br>🏫 West Visayas State University<br>💻 Interested in Web Development & Machine Learning<br>🌱 Currently learning and improving my programming skills<br>💬 Ask me about<br>🚀 I enjoy creating projects and experimenting with new technologies
+<h1 align="center">👋 Hi, I'm Zneb Delariman</h1>
+<h3 align="center">🚀 Aspiring Full-Stack Web Developer | 📊 Data Scientist | 🤖 ML Engineer</h3>
+
 
 
 ## 🌐 Socials:
