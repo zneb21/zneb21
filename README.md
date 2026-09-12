@@ -20,8 +20,6 @@
 ## 📊 GitHub Stats:
 
 <p align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=zneb21&theme=dark&hide_border=false&include_all_commits=true&count_private=false" />
-  <br/>
   <img src="https://streak-stats.demolab.com/?user=zneb21&theme=dark&hide_border=false" />
   <br/>
   <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=zneb21&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact" />
