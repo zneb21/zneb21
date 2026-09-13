@@ -1,4 +1,4 @@
-<h1 align="center">👋 Hi, I'm 𝗭𝗻𝗲𝗯 𝗗𝗲𝗹𝗮𝗿𝗶𝗺𝗮𝗻</h1>
+<h1 align="center">👋 Ｈｉ, Ｉ'ｍ Ｚｎｅｂ Ｄｅｌａｒｉｍａｎ</h1>
 <h3 align="center">🚀 Aspiring Full-Stack Web Developer | 📊 Data Scientist | 🤖 ML Engineer</h3>
 
 
