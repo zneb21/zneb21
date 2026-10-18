@@ -1,7 +1,7 @@
 <div align="center">
 
 <h3><code>zneb21@github ~ $ ./contributions.sh</code></h3>
-<img src="./contrib-heatmap.svg?v=39140938806-1" width="860" alt="Zneb's GitHub contribution graph — auto-refreshed every six hours" />
+<img src="./contrib-heatmap.svg?v=39164530348-1" width="860" alt="Zneb's GitHub contribution graph — auto-refreshed every six hours" />
 
 <br><br>
 
@@ -10,7 +10,7 @@
 <table>
 <tr>
 <td valign="top"><img src="./zneb-ascii.svg" width="420" alt="Zneb Delariman — ASCII portrait" /></td>
-<td valign="top"><img src="./stats.svg?v=39140938806-1" width="420" alt="Zneb's GitHub streak and contribution stats — auto-refreshed every six hours" /></td>
+<td valign="top"><img src="./stats.svg?v=39164530348-1" width="420" alt="Zneb's GitHub streak and contribution stats — auto-refreshed every six hours" /></td>
 </tr>
 </table>
 
