@@ -1,36 +1,45 @@
-<h1 align="center">👋 Ｈｉ, Ｉ'ｍ Ｚｎｅｂ Ｄｅｌａｒｉｍａｎ</h1>
-<h3 align="center">🚀 Aspiring Full-Stack Web Developer | 📊 Data Scientist | 🤖 ML Engineer</h3>
+<div align="center">
 
+<h3><code>zneb21@github ~ $ ./contributions.sh</code></h3>
+<img src="./contrib-heatmap.svg" width="860" alt="Zneb's GitHub contribution graph — auto-refreshed daily" />
 
+<br><br>
 
-## 💻 Tech Stack:
+<h3><code>zneb21@github ~ $ whoami</code></h3>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
-  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
-  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
-  <img src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black" />
-  <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" />
+<table>
+<tr>
+<td valign="top"><img src="./zneb-ascii.svg" width="420" alt="Zneb Delariman — ASCII portrait" /></td>
+<td valign="top"><img src="./stats.svg" width="420" alt="Zneb's GitHub streak and contribution stats — auto-refreshed daily" /></td>
+</tr>
+</table>
+
+<br><br>
+
+<h3><code>zneb21@github ~ $ stack --list</code></h3>
+
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy">
 </p>
 
-## 📊 GitHub Stats:
+<h3><code>zneb21@github ~ $ ./links.sh</code></h3>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=zneb21&theme=dark&hide_border=false" />
-  <br/>
-  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=zneb21&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact" />
-</p>
+<p><b>Full-Stack Web Developer · Data Scientist · ML Engineer</b></p>
 
-## 🌐 Socials:
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/neb0527) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://www.facebook.com/zneb.delariman/) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/nebnebz) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:znebdelariman@gmail.com) 
+[![GitHub](https://img.shields.io/badge/GitHub-zneb21-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zneb21)
+[![Facebook](https://img.shields.io/badge/Facebook-zneb.delariman-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/zneb.delariman/)
+[![Instagram](https://img.shields.io/badge/Instagram-nebnebz-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/nebnebz)
+[![Email](https://img.shields.io/badge/Email-contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:znebdelariman@gmail.com)
 
-## 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=zneb21&limit=5&theme=dark&combine_all_yearly_contributions=true)
+<br>
 
----
-[![](https://komarev.com/ghpvc/?username=zneb21&icon=0&color=0)](https://visitcount.itsvg.in)
+<p>Building useful software, exploring data, and learning in public.</p>
 
+</div>
