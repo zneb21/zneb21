@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Scrape real daily contribution counts from GitHub's public, unauthenticated
-contributions endpoint (the same fragment the profile page itself uses) and
-write data/contributions.json with the raw days plus derived stats
+Fetch GitHub's contribution calendar and write data/contributions.json with
+the raw days plus derived stats. When GH_PROFILE_TOKEN is available, the
+authenticated GraphQL API includes private-contribution totals; otherwise
+the script falls back to public contributions only.
 (current streak, longest streak, best day, monthly totals).
 
-No token, no auth, no GraphQL -- just the public HTML GitHub already serves.
-Run daily by .github/workflows/update-profile-art.yml.
+Run by .github/workflows/update-profile-art.yml.
 """
 import datetime
 import json
@@ -20,10 +20,92 @@ from bs4 import BeautifulSoup
 
 USERNAME = os.environ.get("GH_PROFILE_USER", "zneb21")
 URL = f"https://github.com/users/{USERNAME}/contributions"
+GRAPHQL_URL = "https://api.github.com/graphql"
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.json")
+
+GRAPHQL_QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
+      contributionCalendar {
+        weeks {
+          contributionDays {
+            date
+            contributionCount
+            contributionLevel
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+LEVELS = {
+    "NONE": 0,
+    "FIRST_QUARTILE": 1,
+    "SECOND_QUARTILE": 2,
+    "THIRD_QUARTILE": 3,
+    "FOURTH_QUARTILE": 4,
+}
+
+
+def date_range():
+    end = datetime.datetime.now(datetime.timezone.utc).date()
+    start = end - datetime.timedelta(days=364)
+    return start, end
+
+
+def fetch_days_graphql(token):
+    start, end = date_range()
+    resp = requests.post(
+        GRAPHQL_URL,
+        json={
+            "query": GRAPHQL_QUERY,
+            "variables": {
+                "login": USERNAME,
+                "from": f"{start.isoformat()}T00:00:00Z",
+                "to": f"{end.isoformat()}T23:59:59Z",
+            },
+        },
+        headers={
+            "Authorization": f"bearer {token}",
+            "User-Agent": "profile-readme-bot/1.0",
+            "Accept": "application/vnd.github+json",
+        },
+        timeout=30,
+    )
+    resp.raise_for_status()
+    payload = resp.json()
+    if payload.get("errors"):
+        messages = "; ".join(error.get("message", "GraphQL error") for error in payload["errors"])
+        raise RuntimeError(messages)
+
+    calendar = payload["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    days = []
+    for week in calendar["weeks"]:
+        for day in week["contributionDays"]:
+            days.append({
+                "date": day["date"],
+                "count": int(day["contributionCount"]),
+                "level": LEVELS.get(day["contributionLevel"], 0),
+            })
+
+    start_text, end_text = start.isoformat(), end.isoformat()
+    return [day for day in days if start_text <= day["date"] <= end_text]
 
 
 def fetch_days():
+    token = os.environ.get("GH_PROFILE_TOKEN")
+    if token:
+        try:
+            days = fetch_days_graphql(token)
+            if days:
+                print("using authenticated GitHub contribution calendar")
+                return days
+        except (KeyError, RuntimeError, requests.RequestException) as exc:
+            print(f"authenticated contribution fetch failed; using public fallback: {exc}", file=sys.stderr)
+
     resp = requests.get(
         URL,
         params={"cache": str(time.time_ns())},

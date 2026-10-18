@@ -26,9 +26,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Scrape real contribution data (no auth needed)
+      - name: Fetch real contribution data
         env:
           GH_PROFILE_USER: zneb21
+          # Add PROFILE_GITHUB_TOKEN as a repository secret for private contributions.
+          # The built-in token remains a safe public-only fallback.
+          GH_PROFILE_TOKEN: ${{ secrets.PROFILE_GITHUB_TOKEN || github.token }}
         run: python scripts/fetch_contributions.py
 
       - name: Render animated contribution graph SVG
