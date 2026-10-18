@@ -164,5 +164,5 @@ for i, m in enumerate(monthly):
 
 parts.append('</svg>')
 svg = "".join(parts)
-open(OUT, "w").write(svg)
+open(OUT, "w", encoding="utf-8", newline="\n").write(svg)
 print(f"wrote {OUT}: {W} x {H}, {len(svg)//1024} KB")
