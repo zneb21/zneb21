@@ -64,7 +64,7 @@ mask = cv2.GaussianBlur(alpha.astype(np.float32) / 255.0, (0, 0), 1.0)
 out = out * mask + 255.0 * (1.0 - mask)
 
 ys, xs = np.where(alpha > 20)
-side = max(xs.max() - xs.min(), ys.max() - ys.min()) + 60
+side = max(xs.max() - xs.min(), ys.max() - ys.min()) + 20
 cx, cy = (xs.min() + xs.max()) // 2, (ys.min() + ys.max()) // 2
 canvas = np.full((side, side), 255, np.uint8)
 x0, y0 = cx - side // 2, cy - side // 2
