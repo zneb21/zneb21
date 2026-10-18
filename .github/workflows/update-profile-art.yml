@@ -1,11 +1,11 @@
 name: Update profile art
 
-# Refreshes the contribution graph + stats card SVGs daily from real data.
-# Runs daily, plus whenever you push to main, plus on-demand.
+# Refreshes the contribution graph + stats card SVGs from real GitHub data.
+# Runs every six hours, whenever you push to main, or on-demand.
 
 "on":
   schedule:
-    - cron: "17 6 * * *"   # ~06:17 UTC every day
+    - cron: "17 */6 * * *"   # every six hours at :17 UTC
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -37,8 +37,33 @@ jobs:
       - name: Render streak / numbers card
         run: python scripts/render_stats_svg.py
 
+      - name: Bust GitHub README image cache
+        env:
+          PROFILE_ART_VERSION: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          path = Path("README.md")
+          text = path.read_text(encoding="utf-8")
+          version = os.environ["PROFILE_ART_VERSION"]
+          text = re.sub(
+              r"(contrib-heatmap\.svg\?v=)[^\"]+",
+              rf"\g<1>{version}",
+              text,
+          )
+          text = re.sub(
+              r"(stats\.svg\?v=)[^\"]+",
+              rf"\g<1>{version}",
+              text,
+          )
+          path.write_text(text, encoding="utf-8", newline="\n")
+          PY
+
       - name: Commit updated art
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg stats.svg"
+          commit_message: "chore(profile): refresh contribution graphics [skip ci]"
+          file_pattern: "README.md data/contributions.json contrib-heatmap.svg stats.svg"

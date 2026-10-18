@@ -13,6 +13,7 @@ import json
 import os
 import re
 import sys
+import time
 
 import requests
 from bs4 import BeautifulSoup
@@ -23,7 +24,16 @@ OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.
 
 
 def fetch_days():
-    resp = requests.get(URL, headers={"User-Agent": "profile-readme-bot/1.0"}, timeout=30)
+    resp = requests.get(
+        URL,
+        params={"cache": str(time.time_ns())},
+        headers={
+            "User-Agent": "profile-readme-bot/1.0",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+        },
+        timeout=30,
+    )
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
